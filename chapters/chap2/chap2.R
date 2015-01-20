@@ -1,0 +1,12 @@
+library("plyr", lib.loc="~/R/win-library/3.1")
+library("ggplot2", lib.loc="~/R/win-library/3.1")
+library("reshape2", lib.loc="~/R/win-library/3.1")
+setwd("~/R/MyFirstProject01/data/chap2")
+vehicles <- read.csv(unz("vehicles.csv.zip", "vehicles.csv"), stringsAsFactors = F)
+head(vehicles)
+lables <- do.call(rbind, strsplit(readLines("varlabels.txt"), " - "))
+labels <- lables
+head(labels)
+x <- readLines("varLabels.txt")
+y <- strsplit(x, " - ")
+labels <- do.call(rbind, y)
